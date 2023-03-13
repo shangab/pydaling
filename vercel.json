@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api.py"
+    }
+  ],
+  "env": {
+    "FLASK_APP": "api.py",
+    "FLASK_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "PIPENV_IGNORE_VIRTUALENVS": "1"
+    },
+    "commands": ["pip install pipenv", "pipenv install --system --deploy"]
+  }
+}
